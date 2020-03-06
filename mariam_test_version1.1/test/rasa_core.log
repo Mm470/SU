@@ -59,3 +59,12 @@ Traceback (most recent call last):
   File "/Users/Mariam/.pyenv/versions/3.6.5/lib/python3.6/site-packages/socketio/client.py", line 25, in signal_handler
     return original_signal_handler(sig, frame)
 KeyboardInterrupt
+2020-03-06 21:10:00,490 [DEBUG]  Available web server routes: 
+/webhooks/rest                                     GET                            custom_webhook_CmdlineInput.health
+/webhooks/rest/webhook                             POST                           custom_webhook_CmdlineInput.receive
+2020-03-06 21:12:22,382 [DEBUG]  Available web server routes: 
+/webhooks/rest                                     GET                            custom_webhook_CmdlineInput.health
+/webhooks/rest/webhook                             POST                           custom_webhook_CmdlineInput.receive
+2020-03-06 21:28:38,148 [DEBUG]  Available web server routes: 
+/webhooks/rest                                     GET                            custom_webhook_CmdlineInput.health
+/webhooks/rest/webhook                             POST                           custom_webhook_CmdlineInput.receive

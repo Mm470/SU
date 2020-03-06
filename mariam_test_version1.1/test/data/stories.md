@@ -5,13 +5,12 @@
 
 ## complete utterance
 * incomplete
- - utter_happy
-## - completion_form
-## - form{"name": "completion_form"}
-## - form{"name": null}
-## - utter_slots_values
-## - completion_model
-## - utter_complete
+ - completion_form
+ - form{"name": "completion_form"}
+ - form{"name": null}
+ - utter_slots_values
+ - completion_model
+ - utter_complete
 
 * thankyou
  - utter_noworries
@@ -22,14 +21,14 @@
   - utter_goodbye
 
 ## interactive_story_1
-* greet
-    - utter_greet
-* incomplete
-    - completion_form
-    - utter_slots_values
-* incomplete{"verb": "turn on", "splitpoint": "my"}
-    - completion_form
-    - utter_slots_values
-* incomplete
-    - completion_form
-    - utter_slots_values
+##* greet
+##    - utter_greet
+##* incomplete
+##    - completion_form
+##    - utter_slots_values
+##* incomplete{"verb": "turn on", "splitpoint": "my"}
+##    - completion_form
+##    - utter_slots_values
+##* incomplete
+##    - completion_form
+##    - utter_slots_values
