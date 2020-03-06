@@ -3,6 +3,7 @@ from typing import Dict, Text, Any, List, Union, Optional
 from rasa_sdk import Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.forms import FormAction
+from rasa_sdk.events import SlotSet
 
 
 class CompletionForm(FormAction):
@@ -37,53 +38,7 @@ class CompletionForm(FormAction):
         }
         
         
-##    @staticmethod
-##    def noun_db() -> List[Text]:
-##        """Database of supported devices"""
 
-##        return [
-##            "heating",
-##            "oven",
-##            "light",
-##        ]
-        
-##    def validate_noun(
-##        self,
-##        value: Text,
-##        dispatcher: CollectingDispatcher,
-##        tracker: Tracker,
-##        domain: Dict[Text, Any],
-##    ) -> Dict[Text, Any]:
-##        """Validate noun value."""
-
-##        if value.lower() in self.noun_db():
-##            # validation succeeded, set the value of the "noun" slot to value
-##            return {"noun": value}
-##        else:
-##            dispatcher.utter_message(template="utter_wrong_noun")
-            # validation failed, set this slot to None, meaning the
-            # user will be asked for the slot again
-##            return {"noun": None}     
-        
-##        def validate_verb(
-##        self,
-##        value: Text,
-##        dispatcher: CollectingDispatcher,
-##        tracker: Tracker,
-##        domain: Dict[Text, Any],
-##    ) -> Dict[Text, Any]:
-       ## """Validate verb value."""
-##            return {"verb": value}
-##            
-##        def validate_splitpoint(
-##        self,
-##        value: Text,
-##        dispatcher: CollectingDispatcher,
-##        tracker: Tracker,
-##        domain: Dict[Text, Any],
-##    ) -> Dict[Text, Any]:
-      ##  """Validate splitpoint value."""
-##            return {"splitpoint": value}
   
   
     def submit(
@@ -98,3 +53,24 @@ class CompletionForm(FormAction):
         # utter submit template
         ##dispatcher.utter_message(template="utter_submit")
         return []
+    
+    
+    class CompletionModel(Action):
+
+     def name(self) -> Text:
+     
+         return "completion_model"
+         
+         
+     def run(self, dispatcher, tracker, domain):
+     
+         verb = tracker.get_slot('verb')
+         
+         ##dispatcher.utter_message(template="utter_complete")
+         
+         ##print(verb)
+         
+         return[SlotSet("noun", "light")]
+       
+        
+        

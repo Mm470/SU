@@ -5,11 +5,13 @@
 
 ## complete utterance
 * incomplete
- - completion_form
- - form{"name": "completion_form"}
- - form{"name": null}
- - utter_slots_values
- ##- slot{"requested_slot": "noun"}
+ - utter_happy
+## - completion_form
+## - form{"name": "completion_form"}
+## - form{"name": null}
+## - utter_slots_values
+## - completion_model
+## - utter_complete
 
 * thankyou
  - utter_noworries

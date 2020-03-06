@@ -1,62 +1,67 @@
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - incomplete:
+      use_entities: []
+      
+entities:
+  - verb
+  - splitpoint
+  - noun
+
 actions:
+- utter_greet
 - utter_complete
 - utter_did_that_help
-- utter_goodbye
-- utter_greet
 - utter_happy
+- utter_goodbye
 - utter_noworries
-- utter_slots_values
 - utter_wrong_noun
-entities:
-- splitpoint
-- verb
-forms:
-- completion_form
-intents:
-- greet
-- incomplete:
-    use_entities: []
-- goodbye
-- affirm
-- deny
-- mood_great
-- mood_unhappy
-session_config:
-  carry_over_slots_to_new_session: true
-  session_expiration_time: 0
+- utter_slots_values
+- utter_submit
+- completion_model
+
 slots:
-  noun:
-    auto_fill: false
-    type: unfeaturized
-  requested_slot:
-    type: unfeaturized
-  splitpoint:
-    auto_fill: false
-    type: unfeaturized
   verb:
-    auto_fill: false
     type: unfeaturized
+    auto_fill: false
+  noun:
+    type: unfeaturized
+    auto_fill: false
+  splitpoint:
+    type: unfeaturized
+    auto_fill: false
+
 templates:
-  utter_ask_noun:
-  - text: which device?
-  utter_cheer_up:
-  - image: https://i.imgur.com/nGF1K8f.jpg
-    text: 'Here is something to cheer you up:'
-  utter_complete:
-  - text: this is incomplete its going to the form
-  utter_did_that_help:
-  - text: Did that help you?
-  utter_goodbye:
-  - text: Bye
-  utter_greet:
-  - text: Hey! How are you?
-  utter_happy:
-  - text: Great carry on!
-  utter_here:
-  - text: im here
-  utter_noworries:
-  - text: you are welcome
   utter_slots_values:
-  - text: 'verb: {verb}, splitpoint: {splitpoint}'
+  - text: "verb: {verb}, splitpoint: {splitpoint}" 
+  utter_here:
+  - text: "im here"
+  utter_ask_noun:
+  - text: "which device?"
+  utter_greet:
+  - text: "Hey! How are you?"
+  utter_complete:
+  - text: "do you mean {noun}?"
   utter_wrong_noun:
-  - text: Sorry, i have no control on this device
+  - text: "Sorry, i have no control on this device"
+  utter_noworries:
+  - text: "you are welcome" 
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_did_that_help:
+  - text: "Did that help you?"
+  utter_happy:
+  - text: "Great carry on!"
+  utter_goodbye:
+  - text: "Bye"
+  utter_submit:
+  - text: "Well done"
+  
+forms:
+  - completion_form
