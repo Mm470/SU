@@ -68,7 +68,6 @@
 - [Put on](verb) [the](splitpoint)
 - [Play](verb) [the](splitpoint)
 - [Start](verb) [the](splitpoint)
-- [Start](verb) [the](splitpoint)
 
 ## intent:filler_sentence3_lights
 - Switch [the](splitpoint) [mmmm](filler) on
@@ -79,6 +78,9 @@
 - switch on [the](splitpoint) [living room](location)
 - switch [the](splitpoint) [mmmm](filler) off
 - switch [the](splitpoint) [mmmm](filler) on
+- [Switch on](verb) [the](splitpoint) [mmmm](filler)
+- switch off [the](splitpoint) [living room](location)
+- Switch [the](splitpoint) [hmmmm](filler) off
 
 ## intent:filler_sentence5
 - please switch on [hmmmm](filler)
@@ -121,6 +123,25 @@
 - am I talking to a bot?
 - am I talking to a human?
 
+## intent:filler_sentence4_tv
+- I need to [hear](verb) this, [increase](verb) the volume
+- I couldn't [hear](verb) anything, [increase](verb) the volume
+- I can't [hear](verb) that
+- Too [quiet](silent)
+- [Turn the](verb) sound up
+- [Turn sound](verb) down
+- [Decrease](verb) audio volume
+- This [video](noun) sound is too low, [turn up](verb) the volume
+- I need to see this, turn the volume
+- [quieter](silent)
+- Too [quiet](silent)
+- [quieter](silent)
+- I can't [hear](verb) that
+- I need to [hear](verb) this [increase](verb) the volume
+- I couldn't [hear](verb) anything, [increase](verb) the volume
+- [Turn the](verb) sound up
+- [Decrease](verb) audio volume
+
 ## lookup:location
 - living room
 - Living Room
@@ -134,6 +155,12 @@
 - a
 - to
 - in
+
+## lookup:silent_intent
+- quiet
+- quieter
+- silent
+- silence
 
 ## lookup:verb
 - turn on
